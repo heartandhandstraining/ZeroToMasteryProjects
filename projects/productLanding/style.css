@@ -19,6 +19,7 @@
   *:before,
   *:after {
     box-sizing: inherit;
+    transition: 1s ease-in-out;
   }
   
   body {
@@ -116,7 +117,16 @@ h1 {
 
 @media only screen and (max-width: 373px) {
     .watch {
-        width: 200px;
+        width: 150px;
         top: 90%;
+    }
+    .subtext {
+        padding-top: 0px;
+    }
+    .click-button {
+        margin-top: 0px;
+    }
+    h1 {
+        text-align: center;
     }
 }
