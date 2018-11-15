@@ -6,6 +6,7 @@ function inputLength() {
     return input.value.length;
 }
 
+// todo - add the element invisibly, then add opacity to fade in.
 function createListElement() {
     const li = document.createElement("li");
     const addDelButton = "<button type=\"submit\" class=\"deleteButton\">Delete</button>";
@@ -32,14 +33,15 @@ function addDeleteHandler() {
 const delBut = document.querySelectorAll('.deleteButton');
 for (node of delBut) {
     node.addEventListener('click', function() {
+        this.parentElement.style.opacity = 0;
         node1 = this;
         function changeOp() {
-            node1.parentElement.style.opacity = 0;
+            node1.parentElement.remove();
         }
+        // use a callback func to 'block' async js while element fades out
     setTimeout(function() {
         return changeOp();
-    },1001);
-    node1.parentElement.remove();
+    },400);
         })
     }
 }

@@ -34,7 +34,7 @@ button:hover {
 
 li {
     opacity: 1;
-    transition: 1s cubic-bezier(0.48, 1.38, 0.35, 0.06);
+    transition: .3s linear;
 }
 
 
