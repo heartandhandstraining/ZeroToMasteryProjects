@@ -1,12 +1,26 @@
+body {
+    font-family: 'VT323', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to left, #e84393, #0984e3);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
 h1, h2 {
     padding: 20px;
     text-transform: uppercase;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+p {
+    font-size: 36px;
 }
 
 .wrap {
@@ -16,14 +30,9 @@ body {
 }
 
 input {
-    padding: 0px;
-    box-shadow: none;
-    box-sizing: border-box;
-    border: 0px;
-    border-width: 0px;
-    margin: 0px;
-    outline: none;
-    height: 40px;
-    width: 80px;
-    text-decoration: none;
+    /* Set border: 0; background: none; for the flat input look */
+    border: 0;
+    background: none;
+    height: 80px;
+    width: 160px;
 }
