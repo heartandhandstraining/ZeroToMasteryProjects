@@ -7,8 +7,6 @@ function experiencePoints() {
     }
 }
 
-let experiencePoints = winBattle() ? 10 : 1;
-
 var experiencePoints = winBattle() ? 10 : 1;
 
 //Using this function, answer the questions below:
@@ -27,7 +25,7 @@ function moveCommand(direction) {
             break;
         case "left":
             break;
-            whatHappens = "you run into a troll";
+            return whatHappens = "you run into a troll";
             break;
         default:
             whatHappens = "please enter a valid direction";
@@ -35,12 +33,16 @@ function moveCommand(direction) {
     return whatHappens;
 }
 
-//#2 return value when moveCommand("forward"); undefined
+//#2 return value when moveCommand("forward");
+undefined
 
-//#3 return value when moveCommand("back"); "you arrived home"
+//#3 return value when moveCommand("back");
+"you arrived home"
 
-//#4 return value when moveCommand("right"); "you found a river"
+//#4 return value when moveCommand("right");
+"you found a river"
 
-//#5 return value when moveCommand("left"); undefined
+//#5 return value when moveCommand("left");
+undefined
 
 //BONUS: practice makes perfect. Go and write your own switch function. It takes time to get used to the syntax!
