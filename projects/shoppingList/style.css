@@ -1,0 +1,45 @@
+/* li {
+    display: inline-block;
+} */
+
+* {
+    padding: 10px;
+}
+
+body {
+    background-color: rgb(190, 219, 255);
+    font-family: sans-serif;
+}
+
+input, button {
+    border-radius: 500px;
+    border: none;
+    outline: none;
+}
+
+button {
+    box-shadow: 4px 4px 4px rgba(72, 73, 73, 0.2);
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+button:hover {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+li {
+    opacity: 1;
+    transition: .3s linear;
+}
+
+
+.done {
+    text-decoration: line-through;
+}
+
