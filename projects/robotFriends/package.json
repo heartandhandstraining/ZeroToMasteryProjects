@@ -8,6 +8,7 @@
     "react-scripts": "2.1.1",
     "tachyons": "^4.11.1"
   },
+  "homepage" : "http://myname.github.io/myapp",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

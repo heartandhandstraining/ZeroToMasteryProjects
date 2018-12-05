@@ -3,6 +3,7 @@ import CardList from './CardList';
 import SearchBox from './SearchBox';
 //import { cats } from './cats';
 import './App.css';
+import Scroll from './Scroll.js';
 
 
 class App extends Component {
@@ -29,18 +30,23 @@ class App extends Component {
     }
     
     render() {  
-        const filteredCats = this.state.cats.filter(cat => {
-            return cat.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+        const { cats, searchField } = this.state;
+        const filteredCats = cats.filter(cat => {
+            return cat.name.toLowerCase().includes(searchField.toLowerCase());
         } )
         console.log(`LifeCycle Hook #3 - I'm lexically third, but I get run second
         because there is no 'componentWillMount', then again when 'componentDidMount'
         changes the cats array to the imported and destructured cat object)`);
-        return (
-        <div className="tc">
-            <h1 className='f1'>MiaowyFriends</h1>
-            <SearchBox searchChange={this.onSearchChange}/>
-            <CardList cats={filteredCats} />
-        </div>
+        return !cats.length ?
+            <h1>Loading... </h1> :
+         (
+            <div className="tc">
+                <h1 className='f1'>MiaowyFriends</h1>
+                <SearchBox searchChange={this.onSearchChange}/>
+                <Scroll>
+                    <CardList cats={filteredCats} />
+                </Scroll>
+            </div>
         );
      };
 };
