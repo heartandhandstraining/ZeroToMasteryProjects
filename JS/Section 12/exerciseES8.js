@@ -35,4 +35,31 @@ let obj = {
   the: 'raindeer'
 }
 // to this:
-'my name is Rudolf the raindeer'
+'my name is Rudolf the reindeer'
+
+// Options to solve # 3
+// New to ES8
+Object.values
+
+Object.entries
+
+// Previously had:
+Object.keys(obj). // at this point you can treat it like an array
+
+// Solution 1
+
+let newObj7 = Object.keys(obj)
+      .reduce((acc, key) => acc += `${key} ${obj[key]} `
+      ,[]);
+
+// Solution 2
+
+let newArr8 = Object.entries(obj)
+      .reduce((acc, array) => acc += `${array[0]} ${array[1]} `
+      ,"");
+
+// Solution 3
+
+Object.entries(obj).map(value => value.join(" ")).join(' ')
+
+// Async Await is also another feature of ES8
