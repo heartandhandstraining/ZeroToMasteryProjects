@@ -43,27 +43,45 @@ function biggestNumberInArray(arr) {
 
 biggestNumberInArray(array); // returns 100
 
-function biggestNumberInArray2(arr) {
+// for in loops are for enumerating over an object.  Objects are enumerable.  Not iterable.
 
+function biggestNumberInArray2(arr) {
+  let tempNum = 0;
+  for (number in arr) {
+	if (arr[number] > tempNum)
+		tempNum = arr[number];
+  }
+return parseInt(tempNum, 10);
 }
 
 biggestNumberInArray2(array2);
 
 function biggestNumberInArray3(arr) {
-
+	let tempNum = 0;
+	for (number of arr){
+ if (number > tempNum)
+	tempNum = number
+    }
+return tempNum;   
 }
 
-biggestNumberInArray3(array3);
-
+biggestNumberInArray2(array3);
 
 // Question #2:
 // Write a function checkBasket() that lets you know if the item is in the basket or not
 amazonBasket = {
-  glasses: 1
-  books: 2
+  glasses: 1,
+  books: 2,
   floss: 100
 }
 
 function checkBasket(basket, lookingFor) {
-
+  let inOrNot = false;
+  for (item in lookingFor) {
+    if (amazonBasket[lookingFor.toLowerCase()])
+    inOrNot = true;
+  }
+  return inOrNot;
 }
+
+checkBasket(amazonBasket, 'books')
