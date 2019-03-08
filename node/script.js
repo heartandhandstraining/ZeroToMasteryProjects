@@ -6,8 +6,17 @@
 
 // Variables
 
-// const a = 4;
-// const b = 5;
+import largeNumber from 'script2.js'
+
+const a = largeNumber;
+const b = 5;
+
+console.log(a + b);
+
+// Outputs error when run "Unexpected token import"
+
+// Need to use the common.js way.
+
 
 // Useful method from the global object
 // global.setTimeout
@@ -21,6 +30,8 @@
 
 // console.log(__dirname);              
 // Outputs: /home/jayfiled/Documents/git/ZeroToMasteryProjects/node
+
+
 
 
 
