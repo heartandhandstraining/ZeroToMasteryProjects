@@ -6,9 +6,11 @@
 
 // Variables
 
-import largeNumber from 'script2.js'
+const fromScript2 /*use this as the objects name*/ = require('./script2.js')
 
-const a = largeNumber;
+// this imports an object, so you need to access the largeNumber property
+// 
+const a = fromScript2.largeNumber;
 const b = 5;
 
 console.log(a + b);
