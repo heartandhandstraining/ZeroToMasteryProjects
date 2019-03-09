@@ -1,3 +1,4 @@
+/* 
 const express = require('express');
 
 const app = express();
@@ -22,6 +23,27 @@ app.get('/', (req, res) => {
     // if you send an object back, express with automatically 
     // send it through JSON.stringify() so it is presented to the 
     // browser as a JSON object.
+    res.send(user);
+})
+
+app.listen(3000); 
+*/
+
+// Example of a browser refreshing and loading, how it sends a get request
+
+// even if the browser sends a get request of localhost:3000/profile
+// the server is only taking post requests - so there will be a 404 error.
+// post requests need to send data to the server.
+
+const express = require('express');
+
+const app = express();
+
+app.post('/profile', (req, res) => {
+    const user = {
+        name: 'Sally',
+        hobbies: 'Tennis'
+    }
     res.send(user);
 })
 
