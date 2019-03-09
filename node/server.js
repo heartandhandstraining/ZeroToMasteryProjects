@@ -1,4 +1,4 @@
-/* 
+
 const express = require('express');
 
 const app = express();
@@ -26,9 +26,24 @@ app.get('/', (req, res) => {
     res.send(user);
 })
 
-app.listen(3000); 
-*/
+// setting up different routes.
 
+app.get('/profile', (req, res) => {
+
+    res.send('Getting profile')
+})
+
+// Node checks the first parameter on all of the methods for routes and will
+// continue execution of that function if it matches what is requested from 
+// the browser.
+
+app.get('/about', (req, res) => {
+    res.send('Here\'s the about page');
+})
+
+app.listen(3000); 
+
+/* 
 // Example of a browser refreshing and loading, how it sends a get request
 
 // even if the browser sends a get request of localhost:3000/profile
@@ -48,3 +63,4 @@ app.post('/profile', (req, res) => {
 })
 
 app.listen(3000);
+ */
