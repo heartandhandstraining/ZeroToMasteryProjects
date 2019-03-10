@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "nodemon restful-static-pages.js"
+    "start": "nodemon fs-module.js"
   },
   "keywords": [],
   "author": "",
