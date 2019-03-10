@@ -46,3 +46,54 @@ fs.writeFile('bye.txt', 'sad to see you go', err => {
     }
 })
 
+
+// Delete
+
+fs.unlink('./bye.txt', err => {
+    if (err) {
+        console.log(err);
+    }
+    console.log('Inception');
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
