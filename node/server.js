@@ -1,66 +1,40 @@
-
 const express = require('express');
+
+const bodyParser = require('body-parser');
 
 const app = express();
 
-// I am the server
-// I'll wait for a get request, then respond with something.
+// Using body-parser here as middleware to make req.body usable (see comment in app.post func)
 
-// use get()
-// It takes 2 parameters; the get request's directory, and an anonymous func.
-// The function in turn takes two arguments; the request data and response methods.
+app.use(bodyParser.urlencoded({
+    extended: false
+})) // this allows the browser to send a HTML form info via a post request, and for us
+// to handle the data as an object. Accessed by req.body
 
-// The below is assuming the client is sending a get request for the root directory
-// aka. www.joel.com  as opposed to www.joel.com/about <-- in the second instance
-// you would need to set up the first parameter as '/about'
+app.use(bodyParser.json());
+// this allows the server to receive JSON data from a post request, and pass the data
+// as a usable object in further functions.
+
 app.get('/', (req, res) => {
-    const user = {
-        name: 'John',
-        hobby: 'soccer'
-    }
-    // If you send HTML, express takes care of the appropriate header
-    // necessities, like stating that it's content type is text/html and,
-    // if you send an object back, express with automatically 
-    // send it through JSON.stringify() so it is presented to the 
-    // browser as a JSON object.
-    res.send(user);
+    res.send('getting root')
 })
-
-// setting up different routes.
 
 app.get('/profile', (req, res) => {
-
-    res.send('Getting profile')
+    res.send('getting profile');
 })
 
-// Node checks the first parameter on all of the methods for routes and will
-// continue execution of that function if it matches what is requested from 
-// the browser.
-
-app.get('/about', (req, res) => {
-    res.send('Here\'s the about page');
-})
-
-app.listen(3000); 
-
-/* 
-// Example of a browser refreshing and loading, how it sends a get request
-
-// even if the browser sends a get request of localhost:3000/profile
-// the server is only taking post requests - so there will be a 404 error.
-// post requests need to send data to the server.
-
-const express = require('express');
-
-const app = express();
+// There is a tool that allows us to make post request to a server and see what we get back
+// called 'Postman'
 
 app.post('/profile', (req, res) => {
-    const user = {
-        name: 'Sally',
-        hobbies: 'Tennis'
-    }
-    res.send(user);
+    console.log(req.body); 
+    // ^^ express can't log the req.body to the console (it logs as undefined) 
+    // without some middleware.
+    // You need the npm package body-parser. Its parses the req.body into
+    // something that you can use.
+
+    res.send('Success');
 })
 
-app.listen(3000);
- */
+app.listen(3000)
+
